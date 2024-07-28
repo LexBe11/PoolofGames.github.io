@@ -1,3 +1,4 @@
+const apiUrl = 'http://localhost:3000/api/users';
 let points = 0;
 let games = [];
 
@@ -24,48 +25,48 @@ function updateUI() {
     });
 }
 
-function buyGame(gameId) {
-    if (points >= 124500) {
+async function buyGame(gameId) {
+    const gameCosts = {
+        'beamng-drive': 124500,
+        'garrys-mod': 100000
+    };
+    const cost = gameCosts[gameId];
+
+    if (points >= cost) {
+        points -= cost;
         games.push(gameId);
-        points -= 124500;
         saveUserData();
         updateUI();
-        alert('Game purchased successfully!');
     } else {
         alert('Not enough points to buy the game.');
     }
 }
 
-function givePoints() {
+function downloadGame(gameId) {
+    const downloadLinks = {
+        'beamng-drive': 'https://mega.nz/folder/wFxQSKxI#ydnr7puWi6Vw15WQejfoEw',
+        'garrys-mod': 'https://mega.nz/folder/ZZIRDYqT#SgVKbfJA__r1fIA3EztsXw'
+    };
+    const link = downloadLinks[gameId];
+    window.open(link, '_blank');
+}
+
+async function givePoints() {
     const password = document.getElementById('admin-password').value;
     const pointsAmount = parseInt(document.getElementById('points-amount').value, 10);
-    if (password === '2233') {
+    const response = await fetch(`${apiUrl}/admin/give-points`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password, points: pointsAmount })
+    });
+
+    if (response.ok) {
         points += pointsAmount;
         saveUserData();
         updateUI();
         alert('Points added successfully');
     } else {
         alert('Incorrect password');
-    }
-}
-
-function completeSurvey(surveyId) {
-    const surveyPoints = {
-        1: 10000,
-        2: 25000,
-        3: 32000,
-        4: 70000
-    };
-    points += surveyPoints[surveyId];
-    saveUserData();
-    updateUI();
-}
-
-function downloadGame(gameId) {
-    if (games.includes(gameId)) {
-        window.location.href = 'https://mega.nz/folder/wFxQSKxI#ydnr7puWi6Vw15WQejfoEw'; // Updated Mega link
-    } else {
-        alert('You have not purchased this game yet.');
     }
 }
 
