@@ -112,4 +112,34 @@ function startYouTubeChannel() {
   if (!youtubeStarted) {
     youtubeStarted = true;
     alert('YouTube channel started!');
-   
+    // Implement YouTube channel logic here (e.g., additional earnings)
+  } else {
+    alert('YouTube channel is already started.');
+  }
+}
+
+function setupShop() {
+  const shopDiv = document.getElementById('shop');
+  products.forEach(product => {
+    const button = document.createElement('button');
+    button.textContent = `${product.name} - $${product.price}`;
+    button.onclick = () => buyProduct(product.name);
+    shopDiv.appendChild(button);
+  });
+}
+
+function setupUpgrades() {
+  const upgradesDiv = document.getElementById('upgrades');
+  upgrades.forEach(upgrade => {
+    const button = document.createElement('button');
+    button.textContent = `${upgrade.name} - $${upgrade.cost}`;
+    button.onclick = () => buyUpgrade(upgrade.name);
+    upgradesDiv.appendChild(button);
+  });
+}
+
+window.onload = function() {
+  setupShop();
+  setupUpgrades();
+  updateCurrencies();
+};
