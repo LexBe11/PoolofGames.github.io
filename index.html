@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Store</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skincare Empire Tycoon</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Game Store</h1>
-    <p>Points: <span id="points">0</span></p>
-    <button onclick="buyGame('beamng-drive')">Buy BeamNG.drive with 124,500 Points</button>
-    <button onclick="buyGame('garrys-mod')">Buy Garry's Mod with 100,000 Points</button>
-    <h2>Your Games</h2>
-    <ul id="game-list"></ul>
-    <h2>Admin Panel</h2>
-    <input type="password" id="admin-password" placeholder="Admin Password">
-    <input type="number" id="points-amount" placeholder="Points to Add">
-    <button onclick="givePoints()">Give Points</button>
-    <h2>Download</h2>
-    <button onclick="downloadGame('beamng-drive')">Download BeamNG.drive</button>
-    <button onclick="downloadGame('garrys-mod')">Download Garry's Mod</button>
-    <h2>Special Offers</h2>
-    <a href="tlauncher.html">Get Minecraft for Free using TLauncher - Limited Time Only!</a>
-    <script src="script.js"></script>
+  <h1>Skincare Empire Tycoon</h1>
+  <div id="currencies">
+    <p>Money: $<span id="money">0</span></p>
+    <p>Gold: <span id="gold">0</span></p>
+    <p>Gems: <span id="gems">0</span></p>
+  </div>
+  <div id="earning-buttons">
+    <button onclick="earnMoney()">Earn Money</button>
+  </div>
+  <div id="shop">
+    <h2>Shop</h2>
+    <!-- Products will be dynamically added here -->
+  </div>
+  <div id="upgrades">
+    <h2>Upgrades</h2>
+    <!-- Upgrades will be dynamically added here -->
+  </div>
+  <div id="youtube">
+    <h2>YouTube</h2>
+    <button onclick="startYouTubeChannel()">Start YouTube Channel</button>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
