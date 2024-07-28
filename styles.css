@@ -1,63 +1,32 @@
+/* styles.css */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f3f3f3;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#currencies {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: right;
 }
 
-h1, h2 {
-    color: #333;
+#currencies p {
+  margin: 5px 0;
 }
 
-#store, #admin, #games, #surveys {
-    margin: 20px 0;
+#earning-buttons, #shop, #upgrades, #youtube {
+  margin: 20px;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
-}
-
-input[type="password"], input[type="number"] {
-    padding: 10px;
-    margin: 10px 0;
-    width: calc(100% - 24px);
-}
-
-#points {
-    font-weight: bold;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    margin: 10px 0;
-}
-
-ul li a {
-    text-decoration: none;
-    color: #007BFF;
-}
-
-ul li a:hover {
-    text-decoration: underline;
+  background-color: #ddd;
 }
