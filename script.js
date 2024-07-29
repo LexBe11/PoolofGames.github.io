@@ -47,8 +47,8 @@ function givePoints() {
 
 function downloadGame(gameId) {
     const downloadLinks = {
-        'beamng-drive': 'https://mega.nz/file/wFxQSKxI#ydnr7puWi6Vw15WQejfoEw',
-        'garrys-mod': 'https://mega.nz/file/ZZIRDYqT#SgVKbfJA__r1fIA3EztsXw'
+        'beamng-drive': 'https://mega.nz/folder/wFxQSKxI#ydnr7puWi6Vw15WQejfoEw',
+        'garrys-mod': 'https://mega.nz/folder/ZZIRDYqT#SgVKbfJA__r1fIA3EztsXw'
     };
 
     window.location.href = downloadLinks[gameId];
